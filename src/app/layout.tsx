@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Advent_Pro } from 'next/font/google'
 import '@/style/global.scss'
+import Header from '@/components/header'
+import Footer from '@/components/footer'
 
 const yanoneKaffeesatz = Advent_Pro({
     weight: ['500', '600'],
@@ -18,7 +20,11 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${yanoneKaffeesatz.className}`}>{children}</body>
+            <body className={`${yanoneKaffeesatz.className}`}>
+                <Header/>
+                {children}
+                <Footer/>
+            </body>
         </html>
     )
 }

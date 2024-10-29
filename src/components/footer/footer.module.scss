@@ -1,0 +1,13 @@
+@import "@/style/root";
+@import "@/style/mixin/all";
+
+.footer {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0px -1px 0px 0px $black;
+}
+
+.copy {
+    @include big-text;
+}

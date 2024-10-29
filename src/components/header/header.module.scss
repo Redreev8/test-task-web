@@ -1,0 +1,16 @@
+@import "@/style/root";
+@import "@/style/mixin/all";
+
+.header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    box-shadow: 0px 1px 0px 0px $black;
+}
+
+.wrapp {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $g;
+}
