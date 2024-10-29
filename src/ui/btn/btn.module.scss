@@ -24,10 +24,6 @@
         color 0.6s 0s;
     cursor: pointer;
 
-    &:not(:disabled):hover {
-        background-size: 100% 100%;
-    }
-
     &:active {
         opacity: 0.6;
     }
@@ -37,13 +33,18 @@
         cursor: default;
     }
 
+    &:not(:disabled):hover {
+        background-size: 100% 100%;
+    }
 
     &--card {
         @include big-text;
+
         text-align: center;
         color: $white;
         background-image: linear-gradient($white 50%, $white 50%);
         padding: $g-bg;
+
         &:not(:disabled):hover {
             color: $black;
         }
