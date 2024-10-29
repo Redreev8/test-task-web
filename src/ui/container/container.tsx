@@ -7,9 +7,7 @@ interface ContainerProps extends AreaHTMLAttributes<HTMLDivElement> {
 }
 
 const Container: FC<ContainerProps> = ({ children, className }) => {
-    return (
-        <div className={ classNames(className, style['container']) }>{ children }</div>
-    )
+    return <div className={classNames(className, style['container'])}>{children}</div>
 }
 
 export default Container
