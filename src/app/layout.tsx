@@ -21,9 +21,9 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${yanoneKaffeesatz.className}`}>
-                <Header/>
+                <Header />
                 {children}
-                <Footer/>
+                <Footer />
             </body>
         </html>
     )
