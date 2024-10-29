@@ -1,4 +1,4 @@
-import {forwardRef, HtmlHTMLAttributes, ReactNode} from 'react'
+import { forwardRef, HtmlHTMLAttributes, ReactNode } from 'react'
 import classNames from 'classnames'
 import style from './title.module.scss'
 import listComponentTitle from './list-title'
@@ -10,7 +10,7 @@ export interface TitleProps extends HtmlHTMLAttributes<HTMLHeadingElement> {
 }
 
 const Title = forwardRef<HTMLHeadingElement, TitleProps>(function TitleRef(
-    {className, level = 2, levelTag = level, children, ...props},
+    { className, level = 2, levelTag = level, children, ...props },
     ref
 ) {
     const cl = classNames(style.title, className, style[`title--${level}`])

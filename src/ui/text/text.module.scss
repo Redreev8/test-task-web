@@ -1,7 +1,8 @@
-@import "@/style/root.scss";
+@import "@/style/root";
 @import "@/style/mixin/all";
 
 .text {
     @include text;
+
     font-weight: 500;
 }
