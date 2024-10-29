@@ -3,7 +3,7 @@ import {Advent_Pro} from 'next/font/google'
 import '@/style/global.scss'
 
 const yanoneKaffeesatz = Advent_Pro({
-    weight: ['400', '600'],
+    weight: ['500', '600'],
     subsets: ['cyrillic'],
 })
 export const metadata: Metadata = {
@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body>{children}</body>
+            <body className={`${yanoneKaffeesatz.className}`}>{children}</body>
         </html>
     );
 }
