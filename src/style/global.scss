@@ -1,0 +1,13 @@
+@import "./root";
+@import "./mixin/all";
+
+body {
+    @include text;
+    
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    color: $text;
+    background-color: $bg;
+    margin: 0;
+}
