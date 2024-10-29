@@ -1,3 +1,3 @@
-import AlsoSection from "./also-section";
+import AlsoSection from './also-section'
 
 export default AlsoSection
