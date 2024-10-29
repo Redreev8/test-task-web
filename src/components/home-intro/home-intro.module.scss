@@ -1,4 +1,4 @@
-@import "@/style/root.scss";
+@import "@/style/root";
 @import "@/style/mixin/all";
 
 .container {
@@ -16,6 +16,7 @@
     max-width: 400px;
     width: 100%;
     margin: 0;
+
     @include phablet {
         max-width: 100%;
     }
@@ -30,6 +31,7 @@
 .inframe {
     width: 100%;
     height: 100%;
+
     @include phablet {
         flex-direction: column;
         max-height: 480px;

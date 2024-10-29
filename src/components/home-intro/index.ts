@@ -1,3 +1,3 @@
-import HomeIntro from "./home-intro";
+import HomeIntro from './home-intro'
 
 export default HomeIntro
