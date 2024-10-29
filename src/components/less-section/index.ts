@@ -1,3 +1,3 @@
-import LessSection from "./less-section";
+import LessSection from './less-section'
 
 export default LessSection
