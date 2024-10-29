@@ -8,13 +8,18 @@ export interface CardProps extends AreaHTMLAttributes<HTMLDivElement> {
     isTitle?: boolean
 }
 
-const Card = forwardRef<HTMLParagraphElement, CardProps>(function TextRef({ className, children, isText, isTitle }, ref) {
+const Card = forwardRef<HTMLParagraphElement, CardProps>(function TextRef(
+    { className, children, isText, isTitle },
+    ref
+) {
     const cl = classNames(style.box, className, {
         [style['box--text']]: isText,
-        [style['box--title']]: isTitle,
+        [style['box--title']]: isTitle
     })
     return (
-        <div ref={ ref } className={ cl }>{ children }</div>
+        <div ref={ref} className={cl}>
+            {children}
+        </div>
     )
 })
 
