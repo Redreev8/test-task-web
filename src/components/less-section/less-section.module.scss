@@ -1,0 +1,8 @@
+@import "@/style/root";
+@import "@/style/mixin/all";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: $g-tiny;
+}

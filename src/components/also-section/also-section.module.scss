@@ -1,0 +1,46 @@
+@import "@/style/root";
+@import "@/style/mixin/all";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: $g-tiny;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: $g-tiny;
+    margin: 0;
+    padding: 0;
+    
+    @include tablet {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include mobile {
+        grid-template-columns: 1fr;
+    }
+}
+
+.item {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    min-height: 200px;
+
+    &__title {
+        max-width: 400px;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__text {
+        max-width: 360px;
+        margin: 0;
+        padding: 0;
+    }
+}

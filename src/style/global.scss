@@ -5,9 +5,10 @@ body {
     @include text;
     
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: $g-tiny;
     min-height: 100vh;
-    color: $text;
+    color: $black;
     background-color: $bg;
     margin: 0;
 }

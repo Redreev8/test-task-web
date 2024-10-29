@@ -1,5 +1,6 @@
-$black: #151515;
-$white: #e3ded8;
+$black: #0c0f0a;
+$white: #fff;
+$bg: $black;
 
 $g-xl: 64px;
 $g-lg: 44px;
@@ -8,7 +9,7 @@ $g: 16px;
 $g-md: 12px;
 $g-sm: 8px;
 $g-xs: 4px;
-$g-tiny: 4px;
+$g-tiny: 1px;
 
 $gap-map: (
     xl: 64px,
@@ -21,4 +22,4 @@ $gap-map: (
     tiny: 4px,
 );
 
-$border-line: 1px solid $black;
+$border-line: 2px solid $white;

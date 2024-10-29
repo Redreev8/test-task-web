@@ -1,0 +1,40 @@
+@import "@/style/root";
+@import "@/style/mixin/all";
+
+.container {
+    display: flex;
+    height: 480px;
+    gap: $g-tiny;
+    
+    @include phablet {
+        flex-direction: column;
+        height: auto;
+    }
+}
+
+.title {
+    max-width: 400px;
+    width: 100%;
+    margin: 0;
+
+    @include phablet {
+        max-width: 100%;
+    }
+}
+
+.text {
+    max-width: 360px;
+    width: 100%;
+    margin: 0;
+}
+
+.inframe {
+    width: 100%;
+    height: 100%;
+
+    @include phablet {
+        flex-direction: column;
+        max-height: 480px;
+        height: 100vh;
+    }
+}
