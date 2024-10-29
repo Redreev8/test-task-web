@@ -3,7 +3,9 @@ import style from './logo.module.scss'
 
 const Logo = () => {
     return (
-        <Link className={ style['logo'] } href='/'>Some Company</Link>
+        <Link className={style['logo']} href="/">
+            Some Company
+        </Link>
     )
 }
 
