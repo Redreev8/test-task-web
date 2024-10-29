@@ -1,0 +1,19 @@
+@import "@/style/root";
+@import "@/style/mixin/all";
+
+.logo {
+    text-decoration: none;
+
+    @include big-text;
+
+    color: $black;
+    transition: opacity  .6s 0s;
+
+    &:hover {
+        opacity: .8;
+    }
+
+    &:active {
+        opacity: .6;
+    }
+}
