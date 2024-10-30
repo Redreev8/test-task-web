@@ -23,8 +23,9 @@ const HomeIntro: FC = () => {
                 <Card>
                     <iframe
                         className={style['inframe']}
-                        src="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
                         title="Rick Astley - Never Gonna Give You Up (Official Music Video)"
+                        frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerPolicy="strict-origin-when-cross-origin"
                         allowFullScreen
