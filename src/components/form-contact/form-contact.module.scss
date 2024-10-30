@@ -1,0 +1,20 @@
+@import "@/style/root";
+@import "@/style/mixin/all";
+
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $g;
+}
+
+.messange-wrapp {
+    grid-column: 1 / 4;
+}
+
+.messange {
+    height: 360px;
+}
+
+.btn {
+    grid-column: 1 / 4;
+}

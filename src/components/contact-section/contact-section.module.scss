@@ -1,0 +1,44 @@
+@import "@/style/root";
+@import "@/style/mixin/all";
+
+.title {
+    @include hide;
+}
+
+.container {
+    flex-direction: row;
+}
+
+.form {
+    width: 100%;
+    transition: width .6s 0s;
+
+    &-hiden {
+        overflow: hidden;
+        width: 0;
+    }
+
+    &-none {
+        display: none;
+    }
+
+    &>div {
+        max-width: 1400px;
+        width: 100vw;
+    }
+}
+
+.funcs {
+    width: 0;
+    overflow: hidden;
+    transition: width .6s .3s;
+
+    &-view {
+        width: 100%;
+    }
+
+    &>div {
+        max-width: 1400px;
+        width: 100vw;
+    }
+}
