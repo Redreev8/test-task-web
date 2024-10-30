@@ -1,0 +1,20 @@
+@import "@/style/root";
+@import "@/style/mixin/all";
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: $g-xs;
+}
+
+.controler {
+    height: 100%;
+}
+
+.label {
+    transition: opacity .6s 0s;
+
+    &:has(+ *:disabled) {
+        opacity: .3;
+    }
+}
