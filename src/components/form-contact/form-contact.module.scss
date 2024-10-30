@@ -5,10 +5,18 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: $g;
+
+    @include mobile {
+        grid-template-columns: 1fr;
+    }
 }
 
 .messange-wrapp {
     grid-column: 1 / 4;
+
+    @include mobile {
+        grid-column: 1 / 2;
+    }
 }
 
 .messange {
@@ -17,4 +25,8 @@
 
 .btn {
     grid-column: 1 / 4;
+
+    @include mobile {
+        grid-column: 1 / 2;
+    }
 }
