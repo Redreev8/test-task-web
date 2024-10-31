@@ -211,7 +211,7 @@ body {
 - font connect
 - metadata
 - connect Header and Footer
-```layout.tsx
+```tsx layout.tsx
 import type { Metadata } from 'next'
 import { Advent_Pro } from 'next/font/google'
 import '@/style/global.scss'
