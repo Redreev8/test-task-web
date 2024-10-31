@@ -19,7 +19,7 @@
 
   
 ## Commands
-```package.json
+```bash
 npm run dev
 npm run build
 npm run start
@@ -55,7 +55,7 @@ Stylelint  will fix some errors
 ##### card designer - designer style
 All data is stuffed into cards and the gap is 1px. Use flex and grid.
 
-```also-section.module.scss
+```scss
 .container {
     display: flex;
     flex-direction: column;
@@ -80,7 +80,7 @@ All data is stuffed into cards and the gap is 1px. Use flex and grid.
 ```
 ### Root scss
 
-```root.scss
+```scss
 $black: #0c0f0a;
 $white: #fff;
 $bg: $black;
@@ -109,7 +109,7 @@ $border-line: 2px solid $black;
 ```
 ### Mixins 
 ##### font-szie
-```mixin/font-szie.scss
+```scss
 mixin h1 {
     line-height: 64px;
     font-size: 64px;
@@ -158,7 +158,7 @@ mixin h1 {
 ```
 ##### hide
 SEO rules for hiding tag but screen reader sees it. The example on the contacts page h1 uses this mixin
-```mixin/hide.scss
+```scss
 @mixin hide {
     border: 0; 
     clip: rect(0 0 0 0);
@@ -174,7 +174,7 @@ SEO rules for hiding tag but screen reader sees it. The example on the contacts 
 ```
 ##### media
 All page redraw breakpoints
-```mixin/media.scss
+```scss
 @mixin tablet {
     @media (width <= 960px) {
         @content;
@@ -197,7 +197,7 @@ All page redraw breakpoints
 Used `box-shadow` instead of `border` to save the gap between the card and the header and footer.
 header `box-shadow: 0 1px 0 0 $black;``
 footer `box-shadow: 0 -1px 0 0 $black;``
-```global.scss
+```scss
 body {
     ...
     display: flex;
@@ -211,7 +211,7 @@ body {
 - font connect
 - metadata
 - connect Header and Footer
-```tsx layout.tsx
+```tsx
 import type { Metadata } from 'next'
 import { Advent_Pro } from 'next/font/google'
 import '@/style/global.scss'
@@ -270,7 +270,7 @@ export default function RootLayout({
 }
 ```
 Metadata for social and seo for page
-```
+```tsx
 import { Metadata } from 'next'
 ...
 const title = 'home page tacks'
@@ -297,8 +297,7 @@ export const metadata: Metadata = {
 Header Component.
 The props `level` are responsible for level
 The props `levelTag` are responsible for level style
-```
-```title.tsx
+```tsx
 import { forwardRef, HtmlHTMLAttributes, ReactNode } from 'react'
 import classNames from 'classnames'
 import style from './title.module.scss'
@@ -326,7 +325,7 @@ const Title = forwardRef<HTMLHeadingElement, TitleProps>(function TitleRef(
 
 export default Title
 ```
-```list-title.tsx
+```tsx
 import { forwardRef, ForwardRefExoticComponent, RefAttributes } from 'react'
 import { TitleProps } from './title'
 
@@ -383,7 +382,7 @@ const listComponentTitle: Levels = {
 
 export default listComponentTitle
 ```
-```title.module.scss
+```scss
 @import "@/style/root";
 @import "@/style/mixin/all";
 
@@ -420,7 +419,7 @@ export default listComponentTitle
 ### Button
 The prop `href` turns the button into a link
 The prop `isCard` create button card
-```btn.tsx
+```tsx
 'use client'
 import style from './btn.module.scss'
 import { forwardRef, ForwardedRef, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react'
@@ -485,7 +484,7 @@ const Btn = forwardRef<HTMLButtonElement | HTMLAnchorElement, LinkProps | Button
 
 export default Btn
 ``` 
-```btn.module.scss
+```scss
 @import "@/style/root";
 @import "@/style/mixin/all";
 
@@ -542,7 +541,7 @@ export default Btn
 Component card
 The prop `isText` the content is arranged in a column where the first element is at the top and the other is at the bottom.
 The prop `isTitle`  becomes full width and the title is centered
-```card.tsx
+```tsx
 import { AreaHTMLAttributes, forwardRef } from 'react'
 import classNames from 'classnames'
 
@@ -570,7 +569,7 @@ const Card = forwardRef<HTMLParagraphElement, CardProps>(function TextRef(
 
 export default Card
 ```
-```card.module.scss
+```scss
 @import "@/style/root";
 @import "@/style/mixin/all";
 
@@ -598,7 +597,7 @@ export default Card
 ## Components
 ### Animate form
 After receiving a response from the backend, the first animation of closing the form is launched. The form card displays an event when the animation is complete, indicating that the animation for the card to appear has started message.
-```
+```tsx
 const [isSubmit, setIsSubmit] = useState<boolean>(false)
     const [isFuncs, setIsFuncs] = useState<boolean>(false)
     const handelTransitionEnd = (e: TransitionEvent<HTMLDivElement>) => {
@@ -625,7 +624,7 @@ return (
 )
 ```
 ### Custom field wrap
-```
+```tsx
 const FieldCustom: FC<FieldProps> = ({ children, className, name, label, messages }) => {
     return (
         <Field className={classNames(className, style['field'])} name={name}>
@@ -641,7 +640,7 @@ const FieldCustom: FC<FieldProps> = ({ children, className, name, label, message
 }
 ```
 
-```
+```tsx
 interface FieldProps {
     name: string
     label: ReactNode
@@ -654,7 +653,7 @@ interface FieldProps {
 }
 ```
 
-```
+```scss
 .field {
     display: flex;
     flex-direction: column;
@@ -683,7 +682,7 @@ Label checked field is disabled.
 ### Form
 If the data is valid  the isLoading to true button and the fields are disabled.
 After IsSubmit is true and the code is executed ##### 1 Animate form
-```
+```tsx 
 const [isLoding, setIsLoding] = useState<boolean>(false)
 const handlerSubmit = async (e: FormEvent<Form>) => {
     e.preventDefault()
@@ -708,7 +707,7 @@ return (
 )
 ```
 A request with an action returns true and sends a message to the console
-```
+```ts
 'use server'
 interface Body {
     name: string
