@@ -36,11 +36,14 @@ const A = forwardRef<HTMLAnchorElement, LinkProps>(function ARef(
 })
 
 const Btn = forwardRef<HTMLButtonElement | HTMLAnchorElement, LinkProps | ButtonProps>(
-    function BtnRef({ className, isWhite, children, isDefulPosition = true, href, isCard, ...props }, ref) {
+    function BtnRef(
+        { className, isWhite, children, isDefulPosition = true, href, isCard, ...props },
+        ref
+    ) {
         const cl = classNames(style.btn, className, {
             [style['btn--card']]: isCard,
             [style['btn--white']]: isWhite,
-            [style['btn--defult-position']]: isDefulPosition,
+            [style['btn--defult-position']]: isDefulPosition
         })
         if (href) {
             return (
@@ -48,7 +51,8 @@ const Btn = forwardRef<HTMLButtonElement | HTMLAnchorElement, LinkProps | Button
                     {...(props as LinkProps)}
                     href={href}
                     ref={ref as ForwardedRef<HTMLAnchorElement>}
-                    className={cl}>
+                    className={cl}
+                >
                     {children}
                 </A>
             )
@@ -57,7 +61,8 @@ const Btn = forwardRef<HTMLButtonElement | HTMLAnchorElement, LinkProps | Button
             <Button
                 {...(props as ButtonProps)}
                 ref={ref as ForwardedRef<HTMLButtonElement>}
-                className={cl}>
+                className={cl}
+            >
                 {children}
             </Button>
         )
