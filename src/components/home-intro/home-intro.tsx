@@ -5,6 +5,7 @@ import Text from '@/ui/text'
 import Title from '@/ui/title'
 import Card from '@/ui/card'
 import Section from '@/ui/section'
+import Image from 'next/image'
 
 const HomeIntro: FC = () => {
     return (
@@ -21,15 +22,13 @@ const HomeIntro: FC = () => {
                     </Text>
                 </Card>
                 <Card>
-                    <iframe
-                        className={style['inframe']}
-                        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                        title="Rick Astley - Never Gonna Give You Up (Official Music Video)"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        allowFullScreen
-                    />
+                    <div className={style['img']}>
+                        <Image
+                            src="/img-sqr.png"
+                            fill={true}
+                            alt="test img srq size"
+                        />
+                    </div>
                 </Card>
             </Container>
         </Section>
