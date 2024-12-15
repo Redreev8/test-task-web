@@ -1,0 +1,30 @@
+@import "@/style/root";
+@import "@/style/mixin/all";
+
+.slider {
+    display: flex;
+    overflow: hidden;
+    cursor: grab;
+
+    &--grabbing {
+        cursor: grabbing;
+    }
+
+    &__wrapp {
+        list-style-type: none;
+        display: inline-flex;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+
+        &--move {
+            pointer-events: none;
+        }
+    }
+
+    &__slide {
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+}
