@@ -5,7 +5,7 @@ interface Levels {
     [key: number]: ForwardRefExoticComponent<
         Omit<TitleProps, 'level'> & RefAttributes<HTMLHeadingElement>
     >
-    span: ForwardRefExoticComponent<Omit<TitleProps, 'level'> & RefAttributes<HTMLHeadingElement>>
+    span: ForwardRefExoticComponent<Omit<TitleProps, 'level'> & RefAttributes<HTMLSpanElement>>
 }
 
 const listComponentTitle: Levels = {
@@ -51,11 +51,11 @@ const listComponentTitle: Levels = {
             </h6>
         )
     }),
-    span: forwardRef<HTMLHeadingElement, TitleProps>(function H6Ref({ children, ...props }, ref) {
+    span: forwardRef<HTMLSpanElement, TitleProps>(function H6Ref({ children, ...props }, ref) {
         return (
-            <h6 ref={ref} {...props}>
+            <span ref={ref} {...props}>
                 {children}
-            </h6>
+            </span>
         )
     })
 }

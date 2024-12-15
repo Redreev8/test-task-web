@@ -1,15 +1,15 @@
-import { forwardRef, HtmlHTMLAttributes, ReactNode } from 'react'
+import { forwardRef, HtmlHTMLAttributes, LegacyRef, ReactNode } from 'react'
 import classNames from 'classnames'
 import style from './title.module.scss'
 import listComponentTitle from './list-title'
-export interface TitleProps extends HtmlHTMLAttributes<HTMLHeadingElement> {
+export interface TitleProps extends HtmlHTMLAttributes<HTMLHeadingElement | HTMLSpanElement> {
     children: ReactNode
     level?: number
     levelTag?: number | 'span'
     className?: string
 }
 
-const Title = forwardRef<HTMLHeadingElement, TitleProps>(function TitleRef(
+const Title = forwardRef<HTMLHeadingElement | HTMLSpanElement, TitleProps>(function TitleRef(
     { className, level = 2, levelTag = level, children, ...props },
     ref
 ) {
@@ -17,7 +17,7 @@ const Title = forwardRef<HTMLHeadingElement, TitleProps>(function TitleRef(
 
     const Componet = listComponentTitle[levelTag]
     return (
-        <Componet ref={ref} className={cl} {...props}>
+        <Componet ref={ref as LegacyRef<HTMLHeadingElement> } className={cl} {...props}>
             {children}
         </Componet>
     )
