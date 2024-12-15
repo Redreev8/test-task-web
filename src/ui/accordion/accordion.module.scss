@@ -1,0 +1,97 @@
+@import '@/style/root.scss';
+@import "@/style/mixin/all";
+
+.accordion-list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: $g-tiny;
+    padding: 0;
+    margin: 0;
+    &__item {
+        display: flex;
+        padding: 0;
+        margin: 0;
+    }
+
+    &--verticale {
+        flex-direction: row;
+    }
+}
+
+.accordion {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    &-list--verticale .accordion {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row-reverse;
+    }
+    &__btn {
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        color: $black;
+        gap: $g;
+        width: 100%;
+        padding: $g $g-bg;
+        transition: color .6s 0s;
+    }    
+    &-list--verticale  &__btn {
+        order: 2;
+        padding: $g-bg;
+        transform: rotate(180deg);
+        writing-mode: vertical-lr;
+    }
+    &__icon {
+        position: relative;
+        width: 24px;
+        height: 24px;
+        transition: transform .6s 0s;
+    }
+    &--active &__icon {
+        transform: rotate(-45deg);
+    }
+
+    &__wrapp {
+        display: grid;
+        grid-template-rows: 0fr;
+        overflow: hidden;
+        transition: grid-template-rows .6s 0s;
+    }
+    &-list--verticale &__wrapp {
+        grid-template-rows: auto;
+        grid-template-columns: 0fr;
+        transition: grid-template-columns .6s 0s;
+    }
+    &--active &__wrapp  {
+        flex-shrink: 0;
+        grid-template-rows: 1fr;
+    }
+    &-list--verticale &--active &__wrapp {
+        height: 100%;
+        grid-template-columns: 1fr;
+    }
+    &__inner {
+        min-height: 0;
+    }
+    &-list--verticale &__inner {
+        min-height: auto;
+        min-width: 0;
+    }
+    &__content {
+        background-color: $white;
+        padding-top: $g;
+        padding-left: $g-bg;
+        padding-right: $g-bg;
+        padding-bottom: $g-bg;
+    }
+    &-list--verticale &__content {
+        height: 100%;
+        padding-top: $g-bg;
+        padding-left: $g;
+        padding-right: $g-bg;
+        padding-bottom: $g-bg;
+    }
+}

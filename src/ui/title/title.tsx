@@ -5,7 +5,7 @@ import listComponentTitle from './list-title'
 export interface TitleProps extends HtmlHTMLAttributes<HTMLHeadingElement> {
     children: ReactNode
     level?: number
-    levelTag?: number
+    levelTag?: number | 'span'
     className?: string
 }
 

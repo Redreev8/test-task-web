@@ -8,21 +8,24 @@
     @include text;
 
     color: $white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: $black;
     background-image: linear-gradient($white 50%, $white 50%);
     background-position: left top;
     background-repeat: no-repeat;
     background-size: 100% 0%;
-    padding: $g-sm $g;
     border: none;
     transition:
         background-size 0.6s 0s,
         opacity 0.6s 0s,
         color 0.6s 0s;
     cursor: pointer;
+
+    &--defult-position {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: $g-sm $g;
+    }
 
     &:active {
         opacity: 0.6;
@@ -46,6 +49,16 @@
 
         &:not(:disabled):hover {
             color: $black;
+        }
+    }
+
+    &--white {
+        color: $black;
+        background-color: $white;
+        background-image: linear-gradient($black 50%, $black 50%);
+        &:not(:disabled):hover {
+            color: $white;
+            background-size: 100% 100%;
         }
     }
 }

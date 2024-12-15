@@ -6,6 +6,8 @@ import Link from 'next/link'
 
 export interface Props {
     isCard?: boolean
+    isWhite?: boolean
+    isDefulPosition?: boolean
     href?: string
 }
 
@@ -34,9 +36,11 @@ const A = forwardRef<HTMLAnchorElement, LinkProps>(function ARef(
 })
 
 const Btn = forwardRef<HTMLButtonElement | HTMLAnchorElement, LinkProps | ButtonProps>(
-    function BtnRef({ className, children, href, isCard, ...props }, ref) {
+    function BtnRef({ className, isWhite, children, isDefulPosition = true, href, isCard, ...props }, ref) {
         const cl = classNames(style.btn, className, {
-            [style['btn--card']]: isCard
+            [style['btn--card']]: isCard,
+            [style['btn--white']]: isWhite,
+            [style['btn--defult-position']]: isDefulPosition,
         })
         if (href) {
             return (

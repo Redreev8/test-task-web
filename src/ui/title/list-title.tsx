@@ -2,9 +2,12 @@ import { forwardRef, ForwardRefExoticComponent, RefAttributes } from 'react'
 import { TitleProps } from './title'
 
 interface Levels {
-    [key: number]: ForwardRefExoticComponent<
+    [key: number ]: ForwardRefExoticComponent<
         Omit<TitleProps, 'level'> & RefAttributes<HTMLHeadingElement>
     >
+    'span': ForwardRefExoticComponent<
+        Omit<TitleProps, 'level'> & RefAttributes<HTMLHeadingElement>
+    > 
 }
 
 const listComponentTitle: Levels = {
@@ -49,7 +52,14 @@ const listComponentTitle: Levels = {
                 {children}
             </h6>
         )
-    })
+    }),
+    'span': forwardRef<HTMLHeadingElement, TitleProps>(function H6Ref({ children, ...props }, ref) {
+        return (
+            <h6 ref={ref} {...props}>
+                {children}
+            </h6>
+        )
+    }),
 }
 
 export default listComponentTitle
