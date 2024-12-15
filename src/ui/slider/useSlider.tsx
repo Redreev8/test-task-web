@@ -22,12 +22,13 @@ const useSlider = ({ classNameWrapp, spead = 4 }: Props) => {
         refStart.current = { x: clientX, y: clientY }
     }
     const handelEnd = () => {
+        setIsDrag(() => false)
         setIsStart(false)
-        setIsDrag(false)
         refStart.current = { x: null, y: null }
     }
     const handelMove = ({ currentTarget, clientX, clientY }: MouseEvent) => {
         if (!isStart) return
+        setIsDrag(() => true)
         toSCroll({
             wrapp: currentTarget.querySelector('.' + classNameWrapp) as HTMLElement,
             tag: currentTarget as HTMLElement,
@@ -41,7 +42,6 @@ const useSlider = ({ classNameWrapp, spead = 4 }: Props) => {
     }
     const handelTouchEnd = () => {
         setIsStart(false)
-        setIsDrag(false)
         refStart.current = { x: null, y: null }
     }
     const handelTouchMove = ({ currentTarget, touches }: TouchEvent) => {
@@ -71,6 +71,7 @@ const useSlider = ({ classNameWrapp, spead = 4 }: Props) => {
     return {
         cor,
         isDrag,
+        isStart,
         handelStart,
         handelEnd,
         handelMove,

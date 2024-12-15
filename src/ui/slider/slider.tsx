@@ -30,6 +30,8 @@ const Slider = forwardRef<HTMLDivElement, SliderProps>(function SliderRef(
     const clWrapp = classNames(style['slider__wrapp'], {
         [style['slider__wrapp--move']]: isDrag
     })
+    console.log(isDrag);
+    
     return (
         <div
             className={cl}
