@@ -24,9 +24,9 @@ const HomeIntro: FC = () => {
                 <Card>
                     <div className={style['img']}>
                         <Image
-                            src="/img-sqr.png"
+                            src="/img-gor.png"
                             fill={true}
-                            alt="test img srq size"
+                            alt="test img srq gorizont"
                         />
                     </div>
                 </Card>
