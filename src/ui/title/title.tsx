@@ -17,7 +17,7 @@ const Title = forwardRef<HTMLHeadingElement | HTMLSpanElement, TitleProps>(funct
 
     const Componet = listComponentTitle[levelTag]
     return (
-        <Componet ref={ref as LegacyRef<HTMLHeadingElement> } className={cl} {...props}>
+        <Componet ref={ref as LegacyRef<HTMLHeadingElement>} className={cl} {...props}>
             {children}
         </Componet>
     )

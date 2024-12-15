@@ -28,7 +28,8 @@ const ContactSection: FC = () => {
                     className={classNames([style['form']], {
                         [style['form-hiden']]: isSubmit,
                         [style['form-none']]: isFuncs
-                    })}>
+                    })}
+                >
                     <Card>
                         <FormContact setIsSubmit={setIsSubmit} />
                     </Card>
