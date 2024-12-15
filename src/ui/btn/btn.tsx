@@ -51,8 +51,7 @@ const Btn = forwardRef<HTMLButtonElement | HTMLAnchorElement, LinkProps | Button
                     {...(props as LinkProps)}
                     href={href}
                     ref={ref as ForwardedRef<HTMLAnchorElement>}
-                    className={cl}
-                >
+                    className={cl}>
                     {children}
                 </A>
             )
@@ -61,8 +60,7 @@ const Btn = forwardRef<HTMLButtonElement | HTMLAnchorElement, LinkProps | Button
             <Button
                 {...(props as ButtonProps)}
                 ref={ref as ForwardedRef<HTMLButtonElement>}
-                className={cl}
-            >
+                className={cl}>
                 {children}
             </Button>
         )

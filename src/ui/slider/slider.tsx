@@ -40,8 +40,7 @@ const Slider = forwardRef<HTMLDivElement, SliderProps>(function SliderRef(
             onMouseMove={handelMove}
             onTouchStart={handelTouchStart}
             onTouchEnd={handelTouchEnd}
-            onTouchMove={handelTouchMove}
-        >
+            onTouchMove={handelTouchMove}>
             <ul className={clWrapp} style={{ transform: `translateX(-${cor.x}px)` }}>
                 {Children.map(children, (child, i) => (
                     <li className={style['slider__slide']} key={i}>

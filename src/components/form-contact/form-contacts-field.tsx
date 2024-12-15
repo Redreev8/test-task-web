@@ -23,8 +23,7 @@ const FormContactsField: FC<FormContactsFieldProps> = ({ isDisebled }) => {
                         children: 'max 20 characters',
                         match: 'tooLong'
                     }
-                ]}
-            >
+                ]}>
                 <Input
                     disabled={isDisebled}
                     type="text"
@@ -45,8 +44,7 @@ const FormContactsField: FC<FormContactsFieldProps> = ({ isDisebled }) => {
                         children: 'Please provide a valid email',
                         match: 'typeMismatch'
                     }
-                ]}
-            >
+                ]}>
                 <Input disabled={isDisebled} type="email" placeholder="insunus@mail.ru" required />
             </Field>
             <Field
@@ -58,8 +56,7 @@ const FormContactsField: FC<FormContactsFieldProps> = ({ isDisebled }) => {
                         children: 'enter your message',
                         match: 'valueMissing'
                     }
-                ]}
-            >
+                ]}>
                 <Textarea disabled={isDisebled} className={style['messange']} required />
             </Field>
         </>
