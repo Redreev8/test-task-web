@@ -13,8 +13,8 @@ const AccordionTitle: FC<AccordionTitleInterface> = ({ children, className, ...p
     const toggle = useContext(AccordionContext)
     const cl = classNames(style['accordion__btn'], className)
     return (
-        <Btn isWhite isDefulPosition={false} className={ cl } onClick={ () => toggle() } { ...props }>
-           { children }
+        <Btn isWhite isDefulPosition={false} className={cl} onClick={() => toggle()} {...props}>
+            {children}
         </Btn>
     )
 }

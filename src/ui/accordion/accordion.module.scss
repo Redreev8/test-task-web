@@ -1,4 +1,4 @@
-@import '@/style/root.scss';
+@import '@/style/root';
 @import "@/style/mixin/all";
 
 .accordion-list {
@@ -8,6 +8,7 @@
     gap: $g-tiny;
     padding: 0;
     margin: 0;
+
     &__item {
         flex-shrink: 0;
         display: flex;
@@ -24,11 +25,13 @@
     position: relative;
     width: 100%;
     box-sizing: border-box;
+
     &-list--verticale .accordion {
         display: flex;
         justify-content: flex-start;
         flex-direction: row-reverse;
     }
+
     &__btn {
         text-align: left;
         display: flex;
@@ -39,6 +42,7 @@
         padding: $g $g-bg;
         transition: color .6s 0s;
     }    
+
     &-list--verticale  &__btn {
         flex-shrink: 1;
         order: 2;
@@ -46,12 +50,14 @@
         transform: rotate(180deg);
         writing-mode: vertical-lr;
     }
+
     &__icon {
         position: relative;
         width: 24px;
         height: 24px;
         transition: transform .6s 0s;
     }
+
     &--active &__icon {
         transform: rotate(-45deg);
     }
@@ -63,40 +69,40 @@
         overflow: hidden;
         transition: grid-template-rows .6s 0s;
     }
+
     &-list--verticale &__wrapp {
         flex-shrink: 0;
         grid-template-rows: auto;
         grid-template-columns: 0fr;
         transition: grid-template-columns .6s 0s;
     }
+
     &--active &__wrapp  {
         flex-shrink: 0;
         grid-template-rows: 1fr;
     }
+
     &-list--verticale &--active &__wrapp {
         height: 100%;
         grid-template-columns: 1fr;
     }
+
     &__inner {
         min-height: 0;
     }
+
     &-list--verticale &__inner {
         min-height: auto;
         min-width: 0;
         height: 100%;
-        overflow-y: auto;
-        overflow-x: hidden;
+        overflow: hidden auto;
     }
+
     &__content {
-        padding-top: $g;
-        padding-left: $g-bg;
-        padding-right: $g-bg;
-        padding-bottom: $g-bg;
+        padding: $g $g-bg $g-bg $g-bg;
     }
+
     &-list--verticale &__content {
-        padding-top: $g-bg;
-        padding-left: $g;
-        padding-right: $g-bg;
-        padding-bottom: $g-bg;
+        padding: $g-bg $g-bg $g-bg $g;
     }
 }

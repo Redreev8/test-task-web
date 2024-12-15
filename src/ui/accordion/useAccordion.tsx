@@ -1,6 +1,6 @@
 'use client'
 import useBoolean from '../../hook/useBoolean'
-import React, { useContext, useEffect, useRef } from 'react'
+import { useContext, useEffect, useRef } from 'react'
 import { AccordionListContext } from './accordion-list'
 
 const useAccordion = (isActive: boolean) => {

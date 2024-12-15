@@ -10,11 +10,9 @@ interface AccordionContentInterface extends HTMLProps<HTMLDivElement> {
 const AccordionContent: FC<AccordionContentInterface> = ({ children, className, ...props }) => {
     const cl = classNames(style['accordion__wrapp'], className)
     return (
-        <div className={ cl } { ...props }>
-            <div className={ style['accordion__inner'] }>
-                <div className={ style['accordion__content'] }>
-                    { children }
-                </div>
+        <div className={cl} {...props}>
+            <div className={style['accordion__inner']}>
+                <div className={style['accordion__content']}>{children}</div>
             </div>
         </div>
     )

@@ -1,5 +1,5 @@
 'use client'
-import { Children, createContext, FC, HTMLProps, ReactNode, useEffect, useRef } from 'react'
+import { Children, createContext, FC, HTMLProps, ReactNode, useRef } from 'react'
 import style from './accordion.module.scss'
 import classNames from 'classnames'
 import useMaxItem, { UseMaxItemReturn } from '@/hook/useMaxItem'
@@ -10,9 +10,19 @@ interface AccordionListInterface extends HTMLProps<HTMLUListElement> {
     max?: number
 }
 
-export const AccordionListContext = createContext<UseMaxItemReturn<HTMLDivElement>>({ itemsActive: [], push: () => {}, remove: () => {} })
+export const AccordionListContext = createContext<UseMaxItemReturn<HTMLDivElement>>({
+    itemsActive: [],
+    push: () => {},
+    remove: () => {}
+})
 
-const AccordionList: FC<AccordionListInterface> = ({ isVerticale, children, className, max = 1, ...props }) => {
+const AccordionList: FC<AccordionListInterface> = ({
+    isVerticale,
+    children,
+    className,
+    max = 1,
+    ...props
+}) => {
     const cl = classNames(style['accordion-list'], className, {
         [style['accordion-list--verticale']]: isVerticale
     })
@@ -20,12 +30,10 @@ const AccordionList: FC<AccordionListInterface> = ({ isVerticale, children, clas
     const { itemsActive, push, remove } = useMaxItem<HTMLDivElement>(max)
     return (
         <AccordionListContext.Provider value={{ itemsActive, push, remove }}>
-            <ul ref={ ref } className={ cl }>
-            {
-                    Children.map(children, child => (
-                        <li className={ style['accordion-list__item'] }>{ child }</li>
-                    ))
-                }
+            <ul ref={ref} className={cl} {...props}>
+                {Children.map(children, (child) => (
+                    <li className={style['accordion-list__item']}>{child}</li>
+                ))}
             </ul>
         </AccordionListContext.Provider>
     )
