@@ -32,6 +32,18 @@
 .card {
     min-height: 200px;
 
+    &__top {
+        display: flex;
+        gap: $g-md;
+    }
+
+    &__icon {
+        fill: none;
+        stroke: currentColor;
+        width: 32px;
+        height: 32px;
+    }
+
     &__title {
         max-width: 400px;
         margin: 0;
@@ -42,6 +54,12 @@
         max-width: 360px;
         margin: 0;
         padding: 0;
+
+        &--wrapp {
+            display: flex;
+            flex-direction: column;
+            gap: $g-sm;
+        }
     }
 
     @include mobile {

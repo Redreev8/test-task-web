@@ -1,17 +1,15 @@
 import { FC } from 'react'
 import style from './also-section.module.scss'
 import Container from '@/ui/container'
-import Text from '@/ui/text'
-import Title from '@/ui/title'
-import Card from '@/ui/card'
 import Btn from '@/ui/btn'
 import Section from '@/ui/section'
+import Title from '@/ui/title'
+import Card from '@/ui/card'
+import AlsoCard, { AlsoCardProps } from './also-card'
+import getAlso from './get-also'
 
-const AlsoSection: FC = () => {
-    const arr = Array.from({ length: 6 }, () => ({
-        title: 'Title',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mattis, leo et condimentum'
-    }))
+const AlsoSection: FC = async () => {
+    let arr: AlsoCardProps[] = await getAlso()
     return (
         <Section aria-labelledby="also-title">
             <Container className={style['container']}>
@@ -23,12 +21,7 @@ const AlsoSection: FC = () => {
                 <ul className={style['grid']}>
                     {arr.map((el, i) => (
                         <li className={style['item']} key={i}>
-                            <Card className={style['card']} isText>
-                                <Title className={style['card__title']} level={3}>
-                                    {el.title}
-                                </Title>
-                                <Text className={style['card__text']}>{el.text}</Text>
-                            </Card>
+                            <AlsoCard icon={ el.icon } title={ el.title } text={ el.text } />
                         </li>
                     ))}
                 </ul>
