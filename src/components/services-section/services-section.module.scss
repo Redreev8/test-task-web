@@ -1,0 +1,34 @@
+@import "@/style/root";
+@import "@/style/mixin/all";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: $g-tiny;
+
+    & * {
+        flex-shrink: 0;
+    }
+}
+
+.accordion-list {
+    height: 360px;
+}
+
+.content {
+    display: flex;
+    gap: $g;
+
+    &__wrapp {
+        width: 340px;
+    }
+
+    &__text {
+        margin: 0;
+        width: inherit;
+    }
+
+    @include phablet {
+        flex-direction: column-reverse;
+    }
+}

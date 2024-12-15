@@ -23,11 +23,7 @@ const HomeIntro: FC = () => {
                 </Card>
                 <Card>
                     <div className={style['img']}>
-                        <Image
-                            src="/img-gor.png"
-                            fill={true}
-                            alt="test img srq gorizont"
-                        />
+                        <Image src="/img-gor.png" fill={true} alt="test img srq gorizont" />
                     </div>
                 </Card>
             </Container>

@@ -2,7 +2,9 @@ import { AreaHTMLAttributes, ForwardRefExoticComponent, RefAttributes } from 're
 import ImgSvg from './img-svg'
 
 interface SvgList {
-    [key: string]: ForwardRefExoticComponent<AreaHTMLAttributes<SVGSVGElement> & RefAttributes<SVGSVGElement>>
+    [key: string]: ForwardRefExoticComponent<
+        AreaHTMLAttributes<SVGSVGElement> & RefAttributes<SVGSVGElement>
+    >
 }
 
 const svgList: SvgList = {

@@ -9,7 +9,7 @@ import AlsoCard, { AlsoCardProps } from './also-card'
 import getAlso from './get-also'
 
 const AlsoSection: FC = async () => {
-    let arr: AlsoCardProps[] = await getAlso()
+    const arr: AlsoCardProps[] = await getAlso()
     return (
         <Section aria-labelledby="also-title">
             <Container className={style['container']}>
@@ -21,7 +21,7 @@ const AlsoSection: FC = async () => {
                 <ul className={style['grid']}>
                     {arr.map((el, i) => (
                         <li className={style['item']} key={i}>
-                            <AlsoCard icon={ el.icon } title={ el.title } text={ el.text } />
+                            <AlsoCard icon={el.icon} title={el.title} text={el.text} />
                         </li>
                     ))}
                 </ul>

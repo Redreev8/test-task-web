@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import AlsoSection from '@/components/also-section'
 import HomeIntro from '@/components/home-intro'
 import LessSection from '@/components/less-section'
+import ServicesSection from '@/components/services-section/services-section'
 
 const title = 'home page tacks'
 const description = 'home page written in next js, scss, radix form'
@@ -25,6 +26,7 @@ const Home = () => {
         <>
             <HomeIntro />
             <AlsoSection />
+            <ServicesSection />
             <LessSection />
         </>
     )

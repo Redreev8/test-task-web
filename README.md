@@ -1,24 +1,26 @@
 # Test website
-## Info deploy
-- url wibsite: https://test-task-web-production.up.railway.app/
-- hosting: https://railway.app/
 
+## Info deploy
+
+-   url wibsite: https://test-task-web-production.up.railway.app/
+-   hosting: https://railway.app/
 
 ## stack
-- **next js (react)** working with the ssr pages and creating application logic. Backend (server actions) response to form
-- **typescript** component typing (value validations)
-- **classNames** library for working with classes
-- **scss** style html tags
-- **radix form** form validation and work an form
 
-  
+-   **next js (react)** working with the ssr pages and creating application logic. Backend (server actions) response to form
+-   **typescript** component typing (value validations)
+-   **classNames** library for working with classes
+-   **scss** style html tags
+-   **radix form** form validation and work an form
+
 ## Stack code style
-- eslint
-- prettier
-- stylelint
 
-  
+-   eslint
+-   prettier
+-   stylelint
+
 ## Commands
+
 ```bash
 npm run dev
 npm run build
@@ -29,30 +31,41 @@ npm run lint-style
 ```
 
 ### `npm run dev`
-First, run the development server  Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### `npm run build` 
+First, run the development server Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+### `npm run build`
+
 Running next build generates an optimized version of your application for production. HTML, CSS, and JavaScript files are created based on your pages. JavaScript is compiled and browser bundles are minified using the Next.js Compiler to help achieve the best performance and support all modern browsers.
 
-### `npm run start` 
+### `npm run start`
+
 To start the Node.js server. This server supports all Next.js features.
 
-### `npm run prettier` 
+### `npm run prettier`
+
 It runs through files and formats them in a uniform style.
 
-### `npm run lint` 
+### `npm run lint`
+
 Scans files and analyzes them then reports errors to keep code consistent. Also depends on prettier
+
 #### `npm run lint -- --fix`
+
 Linter will fix some errors
 
-### `npm run lint-style` 
-Scans .scss files and analyzes them, then reports errors to maintain style consistency.
-### `npm run lint-styel -- --fix`
-Stylelint  will fix some errors
+### `npm run lint-style`
 
+Scans .scss files and analyzes them, then reports errors to maintain style consistency.
+
+### `npm run lint-styel -- --fix`
+
+Stylelint will fix some errors
 
 ## Designer style the website
+
 ##### card designer - designer style
+
 All data is stuffed into cards and the gap is 1px. Use flex and grid.
 
 ```scss
@@ -68,7 +81,7 @@ All data is stuffed into cards and the gap is 1px. Use flex and grid.
     gap: $g-tiny;
     margin: 0;
     padding: 0;
-    
+
     @include tablet {
         grid-template-columns: 1fr 1fr;
     }
@@ -78,6 +91,7 @@ All data is stuffed into cards and the gap is 1px. Use flex and grid.
     }
 }
 ```
+
 ### Root scss
 
 ```scss
@@ -102,13 +116,16 @@ $gap-map: (
     md: 12px,
     sm: 8px,
     xs: 4px,
-    tiny: 4px,
+    tiny: 4px
 );
 
 $border-line: 2px solid $black;
 ```
-### Mixins 
+
+### Mixins
+
 ##### font-szie
+
 ```scss
 mixin h1 {
     line-height: 64px;
@@ -156,14 +173,17 @@ mixin h1 {
     font-size: 16px;
 }
 ```
+
 ##### hide
+
 SEO rules for hiding tag but screen reader sees it. The example on the contacts page h1 uses this mixin
+
 ```scss
 @mixin hide {
-    border: 0; 
+    border: 0;
     clip: rect(0 0 0 0);
     clip-path: polygon(0 0, 0 0, 0 0);
-    height: 1px; 
+    height: 1px;
     margin: -1px;
     overflow: hidden;
     padding: 0;
@@ -172,8 +192,11 @@ SEO rules for hiding tag but screen reader sees it. The example on the contacts 
     white-space: nowrap;
 }
 ```
+
 ##### media
+
 All page redraw breakpoints
+
 ```scss
 @mixin tablet {
     @media (width <= 960px) {
@@ -187,16 +210,19 @@ All page redraw breakpoints
     }
 }
 
-@mixin mobile  {
+@mixin mobile {
     @media (width <= 540px) {
         @content;
     }
 }
 ```
+
 ### Border header and footer
+
 Used `box-shadow` instead of `border` to save the gap between the card and the header and footer.
 header `box-shadow: 0 1px 0 0 $black;``
 footer `box-shadow: 0 -1px 0 0 $black;``
+
 ```scss
 body {
     ...
@@ -207,10 +233,13 @@ body {
     ...
 }
 ```
+
 ### layout
-- font connect
-- metadata
-- connect Header and Footer
+
+-   font connect
+-   metadata
+-   connect Header and Footer
+
 ```tsx
 import type { Metadata } from 'next'
 import { Advent_Pro } from 'next/font/google'
@@ -269,7 +298,9 @@ export default function RootLayout({
     )
 }
 ```
+
 Metadata for social and seo for page
+
 ```tsx
 import { Metadata } from 'next'
 ...
@@ -291,12 +322,14 @@ export const metadata: Metadata = {
 }
 ```
 
-
 ## UI elements
+
 ### Title
+
 Header Component.
 The props `level` are responsible for level
 The props `levelTag` are responsible for level style
+
 ```tsx
 import { forwardRef, HtmlHTMLAttributes, ReactNode } from 'react'
 import classNames from 'classnames'
@@ -325,6 +358,7 @@ const Title = forwardRef<HTMLHeadingElement, TitleProps>(function TitleRef(
 
 export default Title
 ```
+
 ```tsx
 import { forwardRef, ForwardRefExoticComponent, RefAttributes } from 'react'
 import { TitleProps } from './title'
@@ -382,9 +416,10 @@ const listComponentTitle: Levels = {
 
 export default listComponentTitle
 ```
+
 ```scss
-@import "@/style/root";
-@import "@/style/mixin/all";
+@import '@/style/root';
+@import '@/style/mixin/all';
 
 .title {
     &--1 {
@@ -416,9 +451,12 @@ export default listComponentTitle
     }
 }
 ```
+
 ### Button
+
 The prop `href` turns the button into a link
 The prop `isCard` create button card
+
 ```tsx
 'use client'
 import style from './btn.module.scss'
@@ -466,7 +504,8 @@ const Btn = forwardRef<HTMLButtonElement | HTMLAnchorElement, LinkProps | Button
                     {...(props as LinkProps)}
                     href={href}
                     ref={ref as ForwardedRef<HTMLAnchorElement>}
-                    className={cl}>
+                    className={cl}
+                >
                     {children}
                 </A>
             )
@@ -475,7 +514,8 @@ const Btn = forwardRef<HTMLButtonElement | HTMLAnchorElement, LinkProps | Button
             <Button
                 {...(props as ButtonProps)}
                 ref={ref as ForwardedRef<HTMLButtonElement>}
-                className={cl}>
+                className={cl}
+            >
                 {children}
             </Button>
         )
@@ -483,10 +523,11 @@ const Btn = forwardRef<HTMLButtonElement | HTMLAnchorElement, LinkProps | Button
 )
 
 export default Btn
-``` 
+```
+
 ```scss
-@import "@/style/root";
-@import "@/style/mixin/all";
+@import '@/style/root';
+@import '@/style/mixin/all';
 
 .btn {
     text-decoration: none;
@@ -537,10 +578,13 @@ export default Btn
     }
 }
 ```
+
 ### Card
+
 Component card
 The prop `isText` the content is arranged in a column where the first element is at the top and the other is at the bottom.
-The prop `isTitle`  becomes full width and the title is centered
+The prop `isTitle` becomes full width and the title is centered
+
 ```tsx
 import { AreaHTMLAttributes, forwardRef } from 'react'
 import classNames from 'classnames'
@@ -569,9 +613,10 @@ const Card = forwardRef<HTMLParagraphElement, CardProps>(function TextRef(
 
 export default Card
 ```
+
 ```scss
-@import "@/style/root";
-@import "@/style/mixin/all";
+@import '@/style/root';
+@import '@/style/mixin/all';
 
 .box {
     background-color: $white;
@@ -593,10 +638,12 @@ export default Card
 }
 ```
 
-
 ## Components
+
 ### Animate form
+
 After receiving a response from the backend, the first animation of closing the form is launched. The form card displays an event when the animation is complete, indicating that the animation for the card to appear has started message.
+
 ```tsx
 const [isSubmit, setIsSubmit] = useState<boolean>(false)
     const [isFuncs, setIsFuncs] = useState<boolean>(false)
@@ -623,7 +670,9 @@ return (
     ...
 )
 ```
+
 ### Custom field wrap
+
 ```tsx
 const FieldCustom: FC<FieldProps> = ({ children, className, name, label, messages }) => {
     return (
@@ -665,24 +714,28 @@ interface FieldProps {
 }
 
 .label {
-    transition: opacity .6s 0s;
+    transition: opacity 0.6s 0s;
 
     &:has(+ *:disabled) {
-        opacity: .3;
+        opacity: 0.3;
     }
 }
 ```
 
-Label checked field is disabled. 
+Label checked field is disabled.
+
 ```
 &:has(+ *:disabled) {
     opacity: .3;
 }
 ```
+
 ### Form
-If the data is valid  the isLoading to true button and the fields are disabled.
+
+If the data is valid the isLoading to true button and the fields are disabled.
 After IsSubmit is true and the code is executed ##### 1 Animate form
-```tsx 
+
+```tsx
 const [isLoding, setIsLoding] = useState<boolean>(false)
 const handlerSubmit = async (e: FormEvent<Form>) => {
     e.preventDefault()
@@ -690,7 +743,7 @@ const handlerSubmit = async (e: FormEvent<Form>) => {
     setIsLoding(true)
 
     const res = await consoleAction({
-       name: target.name.value,
+        name: target.name.value,
         email: target.email.value,
         messange: target.message.textContent!
     })
@@ -706,7 +759,9 @@ return (
     </Root>
 )
 ```
+
 A request with an action returns true and sends a message to the console
+
 ```ts
 'use server'
 interface Body {
@@ -723,4 +778,3 @@ const consoleAction = async (body: Body) => {
 
 export default consoleAction
 ```
-
